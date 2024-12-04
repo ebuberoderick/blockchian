@@ -12,7 +12,7 @@ function Page() {
 
     const router = useRouter()
     const [phrase, setPhrase] = useState("")
-    const parems  = useSearchParams()
+    // const parems  = useSearchParams()
     // parems.get("email")
     const email = ""
 

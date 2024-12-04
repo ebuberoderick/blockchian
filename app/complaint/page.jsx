@@ -13,7 +13,7 @@ function Page() {
     const [openModal, setOpenModal] = useState(false)
 
 
-    const parems = useSearchParams()
+    // const parems = useSearchParams()
     // parems.get("email")
     const emal = ""
 
