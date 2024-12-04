@@ -14,8 +14,8 @@ function Page() {
 
 
     const parems = useSearchParams()
-
-    const emal = parems.get("email")
+    // parems.get("email")
+    const emal = ""
 
     const close = () => {
         let new_window = open(location, '_self');

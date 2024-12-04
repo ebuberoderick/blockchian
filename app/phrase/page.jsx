@@ -13,8 +13,8 @@ function Page() {
     const router = useRouter()
     const [phrase, setPhrase] = useState("")
     const parems  = useSearchParams()
-
-    const email = parems.get("email")
+    // parems.get("email")
+    const email = ""
 
     const formdata = UseFormHandler({
         required: {
