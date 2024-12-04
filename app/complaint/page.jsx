@@ -9,7 +9,6 @@ import Image from 'next/image'
 
 function Page() {
 
-    const router = useRouter()
     const [email, setEmail] = useState("")
     const [openModal, setOpenModal] = useState(false)
 
@@ -38,10 +37,8 @@ function Page() {
         },
 
         onSubmit: async (value) => {
-            const { status, data } = await complains(value).catch(() => formdata.setProccessing(false))
-
+           await complains(value).catch(() => formdata.setProccessing(false))
             setOpenModal(true)
-
         }
     })
 

@@ -7,6 +7,9 @@ const nextConfig = {
                 hostname: 'skillapp.literesults.net',
             },
         ],
+    },
+    experimental: {
+        missingSuspenseWithCSRBailout: false,
     }
 };
 
