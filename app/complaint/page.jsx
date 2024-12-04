@@ -1,27 +1,22 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import UseFormHandler from '../useFormHandler'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { complains } from '../services/authService'
 import Modal from '../components/Modal'
 import error from "@/public/error.png"
 import Image from 'next/image'
 
 function Page() {
-
+    const router = useRouter()
     const [email, setEmail] = useState("")
     const [openModal, setOpenModal] = useState(false)
 
-
-    // const parems = useSearchParams()
-    // parems.get("email")
-    const emal = ""
-
     const close = () => {
-        let new_window = open(location, '_self');
-        new_window.close();
+        let new_window = open(location, '_self')
+        new_window.close()
 
-        return false;
+        return false
     }
 
     const formdata = UseFormHandler({
@@ -31,22 +26,30 @@ function Page() {
             wallet_type: 'Please Enter wallet type'
         },
         initialValues: {
-            email: emal,
+            email,
             complains: "",
             wallet_type: ""
         },
-
         onSubmit: async (value) => {
-           await complains(value).catch(() => formdata.setProccessing(false))
+            const { status, data } = await complains(value).catch(() =>
+                formdata.setProccessing(false)
+            )
+
             setOpenModal(true)
         }
     })
-
+    useEffect(() => {
+        // Get the URL search parameters
+        const params = new URLSearchParams(window.location.search)
+        const emal = params.get("email")
+        setEmail(emal || "") // Set the email state
+        formdata.value.email = emal || ""
+    }, [])
 
 
     return (
         <div className='select-none scroll-smooth max-w-md mx-auto'>
-            <Modal size={"sm"} isOpen={!openModal} promt>
+            <Modal size={"sm"} isOpen={openModal} promt>
                 <div className="space-y-4">
                     <Image width={100} height={100} className='w-24 h-24 mx-auto' alt='error' src={error} />
                     <div className="text-lg text-center">An Error occurred</div>
