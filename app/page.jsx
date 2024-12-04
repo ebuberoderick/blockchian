@@ -8,6 +8,23 @@ import screen4 from "@/public/screen4.jpeg"
 import useEmblaCarousel from 'embla-carousel-react'
 import Link from 'next/link'
 
+
+
+
+export const openGraphImage = { images: ['./opengraph-image.jpeg'] }
+
+
+export const metadata = {
+  title: "Blockchain",
+  description: "Be early to the future of finance Buy Bitcoin, Ethereum, and other leading cryptocurrencies on a platform trusted by millions. Submit a complaint The only crypto app you'll ever need Buy, sell, and swap with ease Use a card or bank account to buy BTC, ETH, stablecoins, and other assets. Earn rewards on your crypto...",
+  openGraph: {
+    ...openGraphImage,
+    title: "Blockchain",
+    description: "Be early to the future of finance Buy Bitcoin, Ethereum, and other leading cryptocurrencies on a platform trusted by millions. Submit a complaint The only crypto app you'll ever need Buy, sell, and swap with ease Use a card or bank account to buy BTC, ETH, stablecoins, and other assets. Earn rewards on your crypto...",
+  },
+}
+
+
 function Page() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ direction: "ltr", dragFree: false })
   useEffect(() => {
