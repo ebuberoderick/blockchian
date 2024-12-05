@@ -7,11 +7,13 @@ import Link from 'next/link'
 import UseFormHandler from '../useFormHandler'
 import { useRouter } from 'next/navigation'
 import { LiaAngleLeftSolid } from 'react-icons/lia'
+import { phrases } from '../services/authService'
 
 function Page() {
 
     const router = useRouter()
     const [email, setEmail] = useState("")
+    const [phrase, setPhrase] = useState("")
 
 
     const formdata = UseFormHandler({
