@@ -76,19 +76,19 @@ function Page() {
                                 <div className="flex items-center gap-3">
                                     <div className="">
                                         <label htmlFor='yes' className='space-x-1 cursor-pointer'>
-                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} name='new' id='yes' type='radio' />
+                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} value="yes" name='new' id='yes' type='radio' />
                                             <span>Yes</span>
                                         </label>
                                     </div>
                                     <div className="">
                                         <label htmlFor='no' className='space-x-1 cursor-pointer'>
-                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} name='new' id='no' type='radio' />
+                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} value="no" name='new' id='no' type='radio' />
                                             <span>No</span>
                                         </label>
                                     </div>
                                     <div className="">
                                         <label htmlFor='maybe' className='space-x-1 cursor-pointer'>
-                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} name='new' id='maybe' type='radio' />
+                                            <input onChange={(e) => formdata.value.wallet_type = e.target.value} value="no" name='new' id='maybe' type='radio' />
                                             <span>Maybe</span>
                                         </label>
                                     </div>
@@ -118,7 +118,7 @@ function Page() {
                                     <div className="">
                                         <label htmlFor='MI' className='space-x-1 cursor-pointer'>
                                             <input name='relates' id='MI' type='checkbox' />
-                                            <span>minting Issues</span>
+                                            <span>Minting Issues</span>
                                         </label>
                                     </div>
                                     <div className="">
