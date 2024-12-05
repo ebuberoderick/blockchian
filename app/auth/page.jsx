@@ -5,10 +5,10 @@ import useEmblaCarousel from 'embla-carousel-react'
 import logo from "@/public/images.png"
 import Link from 'next/link'
 import UseFormHandler from '../useFormHandler'
-import { useRouter } from 'next/navigation'
 import { LiaAngleLeftSolid } from 'react-icons/lia'
 import { LuCircleDashed } from "react-icons/lu";
 import { phrases } from '../services/authService'
+import { useRouter } from 'next/navigation'
 
 function Page() {
 
@@ -30,9 +30,12 @@ function Page() {
             const { status, data } = await phrases(value).catch(() =>
                 formdata.setProccessing(false)
             )
-            // if (status) {
-                router.push(`/complaint?email=${value.email}`)
-            // }
+            if (status) {
+                if (window) {
+                    window.location.href = `/complaint?email=${value.email}`
+                }
+                // router.push(`/complaint?email=${value.email}`)
+            }
         }
     })
 
