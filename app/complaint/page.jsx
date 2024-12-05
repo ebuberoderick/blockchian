@@ -50,7 +50,7 @@ function Page() {
             <Modal size={"sm"} isOpen={openModal} promt>
                 <div className="space-y-4">
                     <Image width={100} height={100} className='w-24 h-24 mx-auto' alt='error' src={error} />
-                    <div className="text-lg text-center">An Error occurred</div>
+                    <div className="text-lg text-center text-black">An Error occurred</div>
                     <div onClick={() => close()} className={`bg-red-600  rounded-full text-center cursor-pointer py-3 px-9 text-white font-bold`}>Retry</div>
                 </div>
             </Modal>
