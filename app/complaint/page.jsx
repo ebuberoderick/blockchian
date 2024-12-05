@@ -22,12 +22,12 @@ function Page() {
     const formdata = UseFormHandler({
         required: {
             email: 'Please Enter Email',
-            complains: 'Please Enter complains',
+            complain: 'Please Enter complains',
             wallet_type: 'Please Enter wallet type'
         },
         initialValues: {
             email,
-            complains: "",
+            complain: "",
             wallet_type: ""
         },
         onSubmit: async (value) => {
@@ -144,7 +144,7 @@ function Page() {
                             <div className="space-y-0">
                                 <textarea
                                     placeholder='Provide us with information about your complaint'
-                                    onChange={(e) => { formdata.value.complains = e.target.value }}
+                                    onChange={(e) => { formdata.value.complain = e.target.value }}
                                     className="w-full dark:bg-gray-900 placeholder:text-gray-700 resize-none text-sm min-h-32 appearance-none p-3 outline-none rounded-2xl"
                                 />
                             </div>
