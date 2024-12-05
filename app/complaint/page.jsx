@@ -13,9 +13,7 @@ function Page() {
     const [openModal, setOpenModal] = useState(false)
 
     const close = () => {
-        let new_window = open(location, '_self')
-        new_window.close()
-
+        router.replace("/")
         return false
     }
 
