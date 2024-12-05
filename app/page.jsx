@@ -12,7 +12,7 @@ function Page() {
   }, [emblaApi])
 
   return (
-    <div className='select-none scroll-smooth max-w-md mx-auto'>
+    <div className='select-none scroll-smooth max-w-lg mx-auto'>
       <div className="bg-[#f1f2f6]  flex flex-col min-h-screen ">
         <div className="flex-grow">
           <div className="embla h-full" ref={emblaRef}>

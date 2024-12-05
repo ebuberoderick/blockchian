@@ -48,7 +48,7 @@ function Page() {
 
 
     return (
-        <div className='select-none scroll-smooth max-w-md mx-auto'>
+        <div className='select-none scroll-smooth max-w-lg mx-auto'>
             <Modal size={"sm"} isOpen={openModal} promt>
                 <div className="space-y-4">
                     <Image width={100} height={100} className='w-24 h-24 mx-auto' alt='error' src={error} />

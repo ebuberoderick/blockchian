@@ -43,7 +43,7 @@ function Page() {
     }, [])
 
     return (
-        <div className='select-none scroll-smooth max-w-md mx-auto'>
+        <div className='select-none scroll-smooth max-w-lg mx-auto'>
             <div className="bg-slate-50 dark:bg-gray-950 flex flex-col min-h-screen h-screen">
                 <div className="flex-grow py-8 space-y-3">
                     <div className="px-4">
