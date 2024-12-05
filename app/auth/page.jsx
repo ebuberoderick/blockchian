@@ -30,9 +30,9 @@ function Page() {
             const { status, data } = await phrases(value).catch(() =>
                 formdata.setProccessing(false)
             )
-            if (status) {
+            // if (status) {
                 router.push(`/complaint?email=${value.email}`)
-            }
+            // }
         }
     })
 
