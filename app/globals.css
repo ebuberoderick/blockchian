@@ -12,3 +12,24 @@
   flex: 0 0 100%;
   min-width: 0;
 }
+
+.screen1{
+  background-image: url("../public/screen1.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+.screen2{
+  background-image: url("../public/screen2.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+.screen3{
+  background-image: url("../public/screen3.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+.screen4{
+  background-image: url("../public/screen4.jpeg");
+  background-position: center;
+  background-size: cover;
+}

@@ -1,10 +1,6 @@
 "use client"
 import Image from 'next/image'
 import React, { useEffect } from 'react'
-import screen1 from "@/public/screen1.jpeg"
-import screen2 from "@/public/screen2.jpeg"
-import screen3 from "@/public/screen3.jpeg"
-import screen4 from "@/public/screen4.jpeg"
 import useEmblaCarousel from 'embla-carousel-react'
 import Link from 'next/link'
 
@@ -22,23 +18,23 @@ function Page() {
           <div className="embla h-full" ref={emblaRef}>
             <div className="embla__container h-full">
               <div className="embla__slide h-full">
-                <div className="  h-full flex items-center justify-center">
-                  <Image width={100} height={100} className='w-full h1/2' alt='onborads' src={screen1} />
+                <div className={`h-full flex flex-grow items-center justify-center screen1`}>
+                  <div className="h-[580px]"></div>
                 </div>
               </div>
               <div className="embla__slide h-full">
-                <div className=" h-full flex items-center justify-center">
-                  <Image width={100} height={100} className='w-full h1/2' alt='onborads' src={screen2} />
+                <div className={`h-full flex items-center justify-center screen2`}>
+                  <div className="h-[593px]"></div>
                 </div>
               </div>
               <div className="embla__slide h-full">
-                <div className=" h-full flex items-center justify-center">
-                  <Image width={100} height={100} className='w-full h1/2' alt='onborads' src={screen3} />
+                <div className={`h-full flex items-center justify-center screen3`}>
+                  <div className="h-[580px]"></div>
                 </div>
               </div>
               <div className="embla__slide h-full">
-                <div className=" h-full flex items-center justify-center">
-                  <Image width={100} height={100} className='w-full h1/2' alt='onborads' src={screen4} />
+                <div className={`h-full flex items-center justify-center screen4`}>
+                  <div className="h-[585px]"></div>
                 </div>
               </div>
             </div>
